@@ -3,24 +3,41 @@
 // node moduleの読み込み
 const path = require('path');
 const fractal = module.exports = require('@frctl/fractal').create();
+const mandelbrot = require('@frctl/mandelbrot');
 
-// タイトル
+// タイトル設定
 fractal.set('project.title', 'My Fractal');
 
-/*
- * Tell Fractal where to look for components.
- */
+// 各種ファイルのディレクトリ設定
 fractal.components.set('path', path.join(__dirname, '/src/components'));
-
-/*
- * Tell Fractal where to look for documentation pages.
- */
+fractal.components.set('label', 'コンポーネント');
 fractal.docs.set('path', path.join(__dirname, '/src/docs'));
-
-/*
- * Tell the Fractal web preview plugin where to look for static assets.
- */
+fractal.docs.set('label', 'スタイルガイドについて');
 fractal.web.set('static.path', path.join(__dirname, '/src/public'));
 
-/* 静的ファイルの書き出し場所 */
+// カスタムオプション設定
+const options = {
+  skin: 'white',
+  styles: [
+    'default',
+    '/settings/fractal-fix.css',
+  ],
+  nav: [
+    'docs',
+    'components',
+  ],
+  panels: [
+    'html',
+    'resources',
+    'notes',
+  ],
+  lang: 'ja',
+};
+fractal.web.theme(mandelbrot(options));
+
+/* Pugテンプレートの利用 */
+fractal.components.engine('@rsm/fractal-pug-adapter');
+fractal.components.set('ext', '.pug');
+
+// 出力ファイルのディレクトリ設定
 fractal.web.set('builder.dest', __dirname + '/docs');
