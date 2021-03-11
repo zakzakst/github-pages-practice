@@ -1,3 +1,13 @@
 title: Example component
+label: aaa
+variants:
+  - name: default
+    label: サンプル1
+  - name: test
+    label: サンプル2
+    status: ready
+    # status: prototype
+    # status: wip
+    # hidden: true
 context:
-    text: This is an example component!
+  text: aaa
