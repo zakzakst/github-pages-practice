@@ -8,18 +8,32 @@ jobs:
   fractal_build:
     name: Fractal Build
     # runs-on: ubuntu-latest
-    runs-on: ubuntu-18.04
+    # runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [12.x, 14.x]
     steps:
-      - name: setup Node
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: 12.16.1
-      - name: install
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, and test
         run: npm install
-      - name: scssBuild
-        run: gulp scssBuild
-      # - name: build
-      #   run: fractal build
-      # run: |
-      #   npm install
-      #   fractal build
+        # run: |
+        #   npm install
+        #   npm test
+    # steps:
+    #   # - name: setup Node
+    #   #   uses: actions/setup-node@v1
+    #   #   with:
+    #   #     node-version: 12.16.1
+    #   - name: install
+    #     run: npm install
+    #   - name: scssBuild
+    #     run: gulp scssBuild
+    #   # - name: build
+    #   #   run: fractal build
+    #   # run: |
+    #   #   npm install
+    #   #   fractal build
