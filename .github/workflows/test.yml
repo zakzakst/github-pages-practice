@@ -9,6 +9,10 @@ jobs:
     name: Fractal Build
     runs-on: ubuntu-latest
     steps:
+      - name: setup Node
+          uses: actions/setup-node@v1
+          with:
+            node-version: 12.16.1
       - name: build
         run: |
           npm install
