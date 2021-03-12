@@ -16,8 +16,10 @@ jobs:
           node-version: 12.16.1
       - name: install
         run: npm install
-      - name: build
-        run: fractal build
-        # run: |
-        #   npm install
-        #   fractal build
+      - name: scssBuild
+        run: npm run scssBuild
+      # - name: build
+      #   run: fractal build
+      # run: |
+      #   npm install
+      #   fractal build
