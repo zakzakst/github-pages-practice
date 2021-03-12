@@ -20,6 +20,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install, and test
         run: npm install
+        with:
+          path: ../
         # run: |
         #   npm install
         #   npm test
