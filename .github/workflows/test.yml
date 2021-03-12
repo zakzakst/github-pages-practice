@@ -32,6 +32,7 @@ jobs:
         with:
           node-version: 12.16.1
       - name: install
+        working-directory: ./test
         run: npm install
       # - name: scssBuild
       #   run: gulp scssBuild
