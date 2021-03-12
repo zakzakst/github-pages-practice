@@ -1,0 +1,14 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  fractal_build:
+    name: Fractal Build
+    steps:
+      - name: build
+        run: |
+          npm install
+          npm run fractalBuild
