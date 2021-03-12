@@ -7,7 +7,8 @@ on:
 jobs:
   fractal_build:
     name: Fractal Build
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - name: setup Node
         uses: actions/setup-node@v1
