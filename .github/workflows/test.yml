@@ -27,6 +27,7 @@ jobs:
     #     #   npm install
     #     #   npm test
     steps:
+      - uses: actions/checkout@v2
       - name: setup Node
         uses: actions/setup-node@v1
         with:
