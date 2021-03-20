@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/zakzakst/github-pages-practice/issues"
   },
-  "homepage": "https://github.com/zakzakst/github-pages-practice#readme",
+  "homepage": "https://zakzakst.github.io/github-pages-practice/",
   "dependencies": {
     "@frctl/fractal": "^1.5.4",
     "@rsm/fractal-pug-adapter": "^0.5.0",
