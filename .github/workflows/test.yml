@@ -41,6 +41,11 @@ jobs:
         run: npm install -g @frctl/fractal
       - name: build
         run: fractal build
+      - name: App Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
       # run: |
       #   npm install
       #   fractal build
