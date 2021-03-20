@@ -37,8 +37,9 @@ jobs:
         run: npm install
       - name: scssBuild
         run: gulp scssBuild
-      - name: build
+      - name: fractalInstall
         run: npm install -g @frctl/fractal
+      - name: build
         run: fractal build
       # run: |
       #   npm install
