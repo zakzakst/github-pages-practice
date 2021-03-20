@@ -35,10 +35,10 @@ jobs:
       - name: install
         # working-directory: ../test
         run: npm install
-      # - name: scssBuild
-      #   run: gulp scssBuild
-      # - name: build
-      #   run: fractal build
+      - name: scssBuild
+        run: gulp scssBuild
+      - name: build
+        run: fractal build
       # run: |
       #   npm install
       #   fractal build
