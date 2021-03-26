@@ -46,7 +46,7 @@ jobs:
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           # github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: main
+          publish_branch: deploy
           publish_dir: ./
       # run: |
       #   npm install
